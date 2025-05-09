@@ -5,23 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idir Zegtitouche - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
         <h1>👋 Hello everyone, I'm Idir</h1>
-        <!-- Navigation bar with anchor links -->
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#projects">My Projects</a>
-            <a href="#github">GitHub Stats</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
     
     <main>
         <!-- Home Section -->
-        <section id="home" class="welcome">
+        <section class="welcome">
             <h2>Welcome to my portfolio</h2>
             <p>
                 I'm a French student passionate about full-stack development.
@@ -32,31 +25,28 @@
                 <div class="card">
                     <h3>About Me</h3>
                     <p>Discover my background and my web development skills.</p>
-                    <a href="#about" class="button">Learn more</a>
                 </div>
                 
                 <div class="card">
                     <h3>My Projects</h3>
                     <p>Explore the projects I've been working on recently.</p>
-                    <a href="#projects" class="button">View Projects</a>
                 </div>
                 
                 <div class="card">
                     <h3>GitHub Stats</h3>
                     <p>Check out my GitHub statistics.</p>
-                    <a href="#github" class="button">View Stats</a>
                 </div>
                 
                 <div class="card">
                     <h3>Contact</h3>
                     <p>Get in touch with me for opportunities or collaboration.</p>
-                    <a href="#contact" class="button">Contact Me</a>
                 </div>
             </div>
         </section>
         
         <!-- About Me Section -->
-        <section id="about" class="about-me">
+        <h1 class="section-title">About Me</h1>
+        <section class="about-me">
             <h2>💻 About Me</h2>
             <p>
                 I am a French student passionate about full-stack development, currently studying to specialize in 
@@ -96,7 +86,8 @@
         </section>
         
         <!-- Projects Section -->
-        <section id="projects" class="projects">
+        <h1 class="section-title">My Projects</h1>
+        <section class="projects">
             <h2>🚀 My Projects</h2>
             
             <div class="project-card">
@@ -128,7 +119,8 @@
         </section>
         
         <!-- GitHub Stats Section -->
-        <section id="github" class="github-stats">
+        <h1 class="section-title">GitHub Statistics</h1>
+        <section class="github-stats">
             <h2>📊 My GitHub Statistics</h2>
             <div class="stats-container">
                 <img src="https://github-readme-stats.vercel.app/api?username=Zegthor91&show_icons=true&theme=radical" 
@@ -155,7 +147,8 @@
         </section>
         
         <!-- Contact Section -->
-        <section id="contact" class="contact">
+        <h1 class="section-title">Contact Me</h1>
+        <section class="contact">
             <h2>📫 Contact</h2>
             
             <div class="contact-info">
@@ -213,41 +206,5 @@
     <footer>
         <p>&copy; 2025 Idir Zegtitouche - All rights reserved</p>
     </footer>
-
-    <script>
-        // Simple script to handle active navigation state
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all sections
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            // Add click event to nav links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Highlight nav items based on scroll position
-            window.addEventListener('scroll', function() {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (scrollY >= (sectionTop - 100)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
